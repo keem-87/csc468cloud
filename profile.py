@@ -26,8 +26,8 @@ virt_engine = ["kvm", "docker", "singularity", "podman"]
 
 for i in range(4):
   node = request.XenVM(virt_engine[i])
-  node.cores = 8
-  node.ram = 8192
+  node.cores = 4
+  node.ram = 4096
   node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU20-64-STD"
   iface = node.addInterface("if" + str(i))
   iface.component_id = "eth1"
