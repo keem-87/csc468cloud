@@ -8,7 +8,8 @@ request = pc.makeRequestRSpec()
 
 tourDescription = \
 """
-This profile provides the template for a compute node with Docker installed on Ubuntu 20.04
+This profile provides the template for four compute nodes installing KVM, Docker, Singularity, and Podman respectively 
+on Ubuntu 20.04
 """
 
 #
