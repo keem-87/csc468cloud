@@ -32,7 +32,7 @@ for i in range(4):
   iface.component_id = "eth1"
   iface.addAddress(pg.IPv4Address(prefixForIP + str(i + 1), "255.255.255.0"))
   link.addInterface(iface)
-  cmd = "sudo bash /local/repository/install_" + virt_engine + ".sh"
+  cmd = "sudo bash /local/repository/install_" + virt_engine[i] + ".sh"
   node.addService(pg.Execute(shell="sh", command=cmd))
   
 pc.printRequestRSpec(request)
