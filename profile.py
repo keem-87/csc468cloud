@@ -18,10 +18,7 @@ tour = IG.Tour()
 tour.Description(IG.Tour.TEXT,tourDescription)
 request.addTour(tour)
 
-prefixForIP = "192.168.1."
-link = request.LAN("lan")
-
-node = request.XenVM("head")
+node = request.XenVM("docker")
 node.cores = 8
 node.ram = 8192
 node.routable_control_ip = "true" 
