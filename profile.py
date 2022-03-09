@@ -7,7 +7,7 @@ request = pc.makeRequestRSpec()
 
 tourDescription = \
 """
-This profile provides the template for a compute node with Docker installed on Ubuntu 18.04
+This profile provides the template for 3 compute nodes with Docker and Kubernetes installed on Ubuntu 18.04
 """
 
 #
