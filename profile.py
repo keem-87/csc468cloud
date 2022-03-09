@@ -24,6 +24,8 @@ num_nodes = 3
 for i in range(num_nodes):
   if i == 0:
     node = request.XenVM("head")
+    bs_landing = node.Blockstore("bs_image", "/image")
+    bs_landing.size = "500GB"
   else:
     node = request.XenVM("worker-" + str(i))
   node.cores = 4
