@@ -1,6 +1,7 @@
 #!/bin/bash 
 set -x
 
+sudo apt-get update
 sudo apt-get install -y nfs-kernel-server
 sudo mkdir -p /opt/keys/flagdir
 sudo chown nobody:nogroup /opt/keys
@@ -13,4 +14,3 @@ sudo systemctl restart nfs-kernel-server
 
 kubeadm init > /opt/keys/kube.log
 sudo touch /opt/keys/kube_done
-
