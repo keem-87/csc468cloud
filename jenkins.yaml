@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: linhbngo/jenkins-gcc:latest
+        image: jenkins-gcc:latest
         ports:
           - name: http-port
             containerPort: 8080
