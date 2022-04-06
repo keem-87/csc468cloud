@@ -18,7 +18,7 @@ kind: Service
 metadata:
   name: jenkins-jnlp
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 50000
       targetPort: 50000
