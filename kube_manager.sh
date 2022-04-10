@@ -15,3 +15,12 @@ sudo systemctl restart nfs-kernel-server
 
 kubeadm init > /opt/keys/kube.log
 sudo touch /opt/keys/kube_done
+
+# the username needs to be changed
+while IFS= read -r line; do
+  mkdir -p /users/$line/.kube
+  sudo cp -i /etc/kubernetes/admin.conf /users/$line/.kube/config
+  sudo chown $line: /users/$line/.kube/config
+done < <( ls -l /users | grep 4096 | cut -d' ' -f3 )
+
+sudo -H -u lngo kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')" 
